@@ -11,6 +11,8 @@ An eccentric electrician has wired n lights, all initially on, so that:
 
 How many moves are required to turn all n lights off?
 
+> Note: To be consistent with Python conventions, switch numbering starts at 0 in this implementation.
+
 ### Usage Example
 
 ```python
@@ -49,8 +51,6 @@ Puzzle is solved!
 See examples.py for more examples.
 
 ### Functions
-
-> Note: Switch numbering starts at 0.
 
 ``Puzzle(num_switches, starting_pos="on", verbose=True)`` - Initializes a puzzle with num_switches, all set to starting_pos. If verbose is True, the puzzle will print your moves and checks automatically.
 
