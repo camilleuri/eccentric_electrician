@@ -52,7 +52,7 @@ See examples.py for more examples.
 
 ### Functions
 
-``Puzzle(num_switches, starting_pos="on", verbose=True)`` - Initializes a puzzle with num_switches, all set to starting_pos. If verbose is True, the puzzle will print your moves and checks automatically.
+``Puzzle(num_switches, starting_pos="on", verbose=True, console=False)`` - Initializes a puzzle with num_switches, all set to starting_pos. If verbose is True, the puzzle will print your moves and checks automatically. If console is True, functions that print their results will not return values so that the game can be better played in the Python console.
 
 ``flip_switch(switch)`` - Attempt to flip switch at index switch. Returns True if the switch is successfully flipped, and False if the switch cannot be flipped.
 
