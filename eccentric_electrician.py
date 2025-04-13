@@ -4,6 +4,7 @@ class Puzzle:
         self.switch_count = num_switches
         self.switches = []
         self.win_condition = not self.resolve_str(starting_pos)
+        self.flip_count = 0
         self.verbose = verbose
         self.console = console
 
@@ -40,6 +41,7 @@ class Puzzle:
             if switch == 0: # First switch
                 self.switches[0] = not self.switches[0]
                 self.cprint("Flip! Switch 0 is now " + self.resolve_bool(self.switches[0]) + ".")
+                self.flip_count += 1
                 if not self.console: return True
             else: # Out of bounds
                 self.cprint("Error: Out of bounds. Valid switches: 0-" + str(self.switch_count-1) + ". You tried: " + str(switch) + ".")
@@ -48,6 +50,7 @@ class Puzzle:
                 if self.switches[switch-1] and not True in self.switches[:switch-1]:
                     self.switches[switch] = not self.switches[switch]
                     self.cprint("Flip! Switch " + str(switch) + " is now " + self.resolve_bool(self.switches[switch]) + ".")
+                    self.flip_count += 1
                     if not self.console: return True
                 else:
                     self.cprint("Error: Could not flip switch " + str(switch) + " due to failed conditions.")
