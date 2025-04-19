@@ -21,7 +21,7 @@ def turn_off(p, n):
     turn_off(p, n-1)
 
 p = Puzzle(10)
-turn_off(p, 9)
+turn_off(p, p.switch_count-1)
 print(p.flip_count)
 
 # Example hardcoded solution to n = 5, lights off to start
